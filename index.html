@@ -415,7 +415,7 @@ let openGroups = new Set();
 
 // === Data Loading ===
 async function loadData() {
-  const resp = await fetch('data/passages.json?v=2');
+  const resp = await fetch(`data/passages.json?v=${Date.now()}`);
   DATA = await resp.json();
   if (!DATA.meta.has_zh) {
     document.getElementById('showZh').parentElement.style.display = 'none';
